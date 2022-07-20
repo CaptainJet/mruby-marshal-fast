@@ -1,17 +1,8 @@
 // base.c
-
-#include <mruby.h>
-#include <stdio.h>
-#include <string.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <unistd.h>
-#include <ctype.h>
-#include <signal.h>
-#include <stdarg.h>
 #include <stdlib.h>
-#include <time.h>
+#include <string.h>
 
+#include "mruby.h"
 #include "mruby/class.h"
 #include "mruby/data.h"
 #include "mruby/value.h"
@@ -19,9 +10,10 @@
 #include "mruby/hash.h"
 #include "mruby/string.h"
 #include "mruby/variable.h"
+#include "mruby/internal.h"
 
 #define MAJOR_V 4
-#define MINOR_V 8
+#define MINOR_V 9
 
 #define MAX_RECURSE 10
 
@@ -29,7 +21,7 @@
  * Define here the regular exception class you are using
  */
 
-#define REGEXP_CLASS "OnigRegexp"
+#define REGEXP_CLASS "Regexp"
 
 typedef struct
 {
