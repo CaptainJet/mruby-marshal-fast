@@ -78,7 +78,7 @@ static mrb_value marshal_load(mrb_state *mrb, mrb_value self)
   bfr_stc b;
   uint8_t v, vers[2];
 
-  bzero(&b, sizeof(bfr_stc));
+  memset(&b, 0, sizeof(bfr_stc));
 
   b.len = RSTRING_LEN(s);
   b.data = malloc(b.len);
@@ -322,7 +322,7 @@ static mrb_value marshal_dump(mrb_state *mrb, mrb_value self)
   bfr_stc b;
   uint8_t v;
 
-  bzero(&b, sizeof(bfr_stc));
+  memset(&b, 0, sizeof(bfr_stc));
 
   v = MAJOR_V;
   b_append(&b, &v, sizeof(uint8_t));
