@@ -37,11 +37,6 @@ The following are marshalled:
 	* otherwise, backs up and restores all instance variables.
 * regular expressions
 
-About **regular expressions**: I only tested this when using the
-`mruby-onig-regexp` gem. If you use another gem, you have to change
-the class definition at L.32 of `base.c`, and I am not sure everything
-will work...
-
 In the directory you find a quick-and-dirty exerciser, that can also
 be run under Ruby (MRI).
 
@@ -50,7 +45,7 @@ be run under Ruby (MRI).
 Just add a line like this one:
 
 ```ruby
-  conf.gem(:github=>'asfluido/mruby-marshal-c')
+  conf.gem github: "CaptainJet/mruby-marshal-fast"
 ```
 
 into your `build_config.rb` file.

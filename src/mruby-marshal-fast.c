@@ -76,7 +76,7 @@ static mrb_value marshal_load(mrb_state *mrb, mrb_value self)
   mrb_get_args(mrb, "S", &s);
 
   bfr_stc b;
-  uint8_t v, vers[2];
+  uint8_t vers[2];
 
   memset(&b, 0, sizeof(bfr_stc));
 
