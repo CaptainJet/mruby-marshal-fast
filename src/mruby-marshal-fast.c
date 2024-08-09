@@ -87,11 +87,6 @@ static mrb_value marshal_load(mrb_state *mrb, mrb_value self)
   vers[0] = ((uint8_t *)b.data)[0];
   vers[1] = ((uint8_t *)b.data)[1];
 
-  if (vers[0] != MAJOR_V || vers[1] != MINOR_V)
-    mrb_raisef(mrb, E_TYPE_ERROR, "%S: Bad version (%S.%S instead of %S.%S)!", mrb_str_new_cstr(mrb, __func__),
-               mrb_fixnum_value(vers[0]), mrb_fixnum_value(vers[1]),
-               mrb_fixnum_value(MAJOR_V), mrb_fixnum_value(MINOR_V));
-
   b.cur_p = 2;
 
   mrb_value to_ret = load_marshal_recurse(mrb, &b);
